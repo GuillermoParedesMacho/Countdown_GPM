@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Post: Codable {
     
@@ -82,6 +83,9 @@ class Network: PicsumAPI {
             
         }.resume()
         
+        AF.request("https://httpbin.org/get").response { response in
+            debugPrint(response)
+        }
     }
     
 }
